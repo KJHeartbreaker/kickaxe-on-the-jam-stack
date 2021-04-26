@@ -11,22 +11,6 @@ import CookieBar from '@modules/shared/cookie-bar'
 import Header from '@modules/shared/header'
 import Footer from '@modules/shared/footer'
 
-if (isBrowser) {
-  console.groupCollapsed(
-    '%c💀 Site Credits',
-    'display:block;padding:0.125em 1em;font-family:courier;font-size:14px;font-weight:bold;line-height:2;text-transform:uppercase;background:black;color:white;'
-  )
-  console.log(
-    '%cDesign by Nick DiMatteo \n– https://nickdimatteo.com',
-    'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
-  )
-  console.log(
-    '%cWeb Development by Nick DiMatteo \n– https://nickdimatteo.com',
-    'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
-  )
-  console.groupEnd()
-}
-
 const duration = 0.4
 const variants = {
   initial: {
@@ -70,84 +54,74 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
   }, [windowHeight])
 
   return (
-    <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="format-detection" content="telephone=no" />
+		<>
+			<Head>
+				<meta charSet="utf-8" />
+				<meta httpEquiv="x-ua-compatible" content="ie=edge" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="format-detection" content="telephone=no" />
 
-        <link preload="true" rel="icon" href="/favicon.svg" />
-        <link
-          preload="true"
-          rel="mask-icon"
-          href="/favicon.svg"
-          color="#000000"
-        />
-        {siteIcon && (
-          <link
-            rel="apple-touch-icon"
-            href={imageBuilder.image(siteIcon).width(180).height(180).url()}
-          />
-        )}
+				<link preload="true" rel="icon" href="/favicon.svg" />
+				<link preload="true" rel="mask-icon" href="/favicon.svg" color="#000000" />
+				{siteIcon && (
+					<link
+						rel="apple-touch-icon"
+						href={imageBuilder.image(siteIcon).width(180).height(180).url()}
+					/>
+				)}
 
-        <link rel="preconnect" href="https://hull-demo.myshopify.com" />
-        <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+				<link
+					rel="preconnect"
+					href="https://kickaxe-guitars-yyc.myshopify.com"
+				/>
+				<link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
 
-        <title>{metaTitle}</title>
-        {metaDesc && <meta name="description" content={metaDesc} />}
+				<title>{metaTitle}</title>
+				{metaDesc && <meta name="description" content={metaDesc} />}
 
-        {shareTitle && (
-          <>
-            <meta property="og:title" content={shareTitle} />
-            <meta name="twitter:title" content={shareTitle} />
-          </>
-        )}
+				{shareTitle && (
+					<>
+						<meta property="og:title" content={shareTitle} />
+						<meta name="twitter:title" content={shareTitle} />
+					</>
+				)}
 
-        {shareDesc && (
-          <>
-            <meta property="og:description" content={shareDesc} />
-            <meta name="twitter:description" content={shareDesc} />
-          </>
-        )}
+				{shareDesc && (
+					<>
+						<meta property="og:description" content={shareDesc} />
+						<meta name="twitter:description" content={shareDesc} />
+					</>
+				)}
 
-        {shareGraphic && (
-          <>
-            <meta
-              property="og:image"
-              content={imageBuilder
-                .image(shareGraphic)
-                .width(1200)
-                .height(630)
-                .url()}
-            />
-            <meta
-              name="twitter:image"
-              content={imageBuilder
-                .image(shareGraphic)
-                .width(1200)
-                .height(630)
-                .url()}
-            />
-          </>
-        )}
+				{shareGraphic && (
+					<>
+						<meta
+							property="og:image"
+							content={imageBuilder.image(shareGraphic).width(1200).height(630).url()}
+						/>
+						<meta
+							name="twitter:image"
+							content={imageBuilder.image(shareGraphic).width(1200).height(630).url()}
+						/>
+					</>
+				)}
 
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
+				<meta property="og:type" content="website" />
+				<meta name="twitter:card" content="summary_large_image" />
 
-        {siteTitle && <meta name="og:site_name" content={siteTitle} />}
+				{siteTitle && <meta name="og:site_name" content={siteTitle} />}
 
-        {schema && generateSchema(schema)}
-      </Head>
+				{schema && generateSchema(schema)}
+			</Head>
 
-      <CookieBar data={site.cookieConsent} />
+			<CookieBar data={site.cookieConsent} />
 
-      <m.div initial="initial" animate="enter" exit="exit" variants={variants}>
-        <Header data={site.header} isTransparent={page.hasTransparentHeader} />
-        <main id="content">{children}</main>
-        <Footer data={site.footer} />
-      </m.div>
-    </>
+			<m.div initial="initial" animate="enter" exit="exit" variants={variants}>
+				<Header data={site.header} isTransparent={page.hasTransparentHeader} />
+				<main id="content">{children}</main>
+				<Footer data={site.footer} />
+			</m.div>
+		</>
   )
 }
 

@@ -11,7 +11,7 @@ import { isBrowser } from '@lib/helpers'
 import PromoBar from './promo-bar'
 import Menu from '@blocks/navigation/menu'
 import MegaNavigation from '@blocks/navigation/mega-nav'
-import Icon from '@components/icon'
+import Logo from '@components/Logo'
 
 // Context helpers
 import {
@@ -21,7 +21,37 @@ import {
   useCartCount,
 } from '@lib/context'
 
-const Header = ({ data = {}, isTransparent }) => {
+
+const CartToggle = () => {
+	const toggleCart = useToggleCart()
+	const cartCount = useCartCount()
+
+	return (
+		<button className="cart-toggle" onClick={() => toggleCart()}>
+			Cart
+			<span
+				className={cx('cart-toggle--count', {
+					'is-active': cartCount > 0,
+				})}
+			>
+				{cartCount}
+			</span>
+		</button>
+	)
+}
+
+const HeaderBackdrop = ({ isActive, onClick }) => {
+	return (
+		<div
+			className={cx('header--backdrop', {
+				'is-active': isActive,
+			})}
+			onClick={onClick}
+		/>
+	)
+}
+
+export default function Header ({ data = {}, isTransparent }) {
   // expand our header data
   const {
     promo,
@@ -72,7 +102,8 @@ const Header = ({ data = {}, isTransparent }) => {
               <div className="logo">
                 <Link href="/" scroll={false}>
                   <a className="logo--link" aria-label="Go Home">
-                    <Icon name="Logo" id="header" viewBox="0 0 215 150" />
+                    {/* <Icon name="Logo" id="header" viewBox="0 0 215 150" /> */}
+                    <Logo />
                   </a>
                 </Link>
               </div>
@@ -199,34 +230,3 @@ const Header = ({ data = {}, isTransparent }) => {
     </>
   )
 }
-
-const CartToggle = () => {
-  const toggleCart = useToggleCart()
-  const cartCount = useCartCount()
-
-  return (
-    <button className="cart-toggle" onClick={() => toggleCart()}>
-      Cart
-      <span
-        className={cx('cart-toggle--count', {
-          'is-active': cartCount > 0,
-        })}
-      >
-        {cartCount}
-      </span>
-    </button>
-  )
-}
-
-const HeaderBackdrop = ({ isActive, onClick }) => {
-  return (
-    <div
-      className={cx('header--backdrop', {
-        'is-active': isActive,
-      })}
-      onClick={onClick}
-    />
-  )
-}
-
-export default Header

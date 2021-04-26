@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "ieasd5lg",
+    "projectId": "ydfac0og",
     "dataset": "production"
   },
   "project": {
-    "name": "HULL",
+    "name": "Kickaxe Guitars",
     "basePath": "/studio"
   },
   "plugins": [
@@ -23,9 +23,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
