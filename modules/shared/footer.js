@@ -9,51 +9,86 @@ import Icon from '@components/icon'
 const Footer = ({ data = {} }) => {
   const { blocks } = data
 
+  console.log('blocks:', blocks)
+
+
   return (
-    <footer className="footer" role="contentinfo">
-      <div className="footer--grid">
-        {blocks.map((block, key) => (
-          <div key={key} className="footer--block">
-            {block.title && <p className="is-h3">{block.title}</p>}
-
-            {block.menu?.items && (
-              <Menu items={block.menu.items} className="menu-footer" />
-            )}
-
-            {block.newsletter && <Newsletter data={block.newsletter} />}
-
-            {block.social && (
-              <div className="menu-social">
-                {block.social.map((link, key) => {
-                  return (
-                    <a
-                      key={key}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icon name={link.icon} />
-                    </a>
-                  )
-                })}
-              </div>
-            )}
-
-            {/* Put our extras in the last block */}
-            {key === 3 && (
-              <div className="footer--extras">
-                <ThemeSwitch />
-
-                <div className="footer--disclaimer">
-                  <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </footer>
+		<footer className="footer" role="contentinfo">
+			<div className="footer--grid">
+				<div className="copy">
+					<p>
+						Copyright © <span>{new Date().getFullYear()}</span> - Kickaxe Guitars
+					</p>
+				</div>
+				{blocks.map((block, key) => (
+					<>
+						{block.social ? (
+							<div key={key} className="footer--block">
+								{/* {block.title && <p className="is-h3">{block.title}</p>} */}
+								{/* <p className="is-h3">{block.title}</p> */}
+								<div className="menu-social">
+									{block.social.map((link, key) => {
+										return (
+											<a
+												key={key}
+												href={link.url}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name={link.icon} />
+											</a>
+										)
+									})}
+								</div>
+							</div>
+						) : null}
+					</>
+				))}
+			</div>
+		</footer>
   )
 }
 
 export default Footer
+
+    //   <div className="footer--grid">
+    //     {blocks.map((block, key) => (
+    //       <div key={key} className="footer--block">
+    //         {block.title && <p className="is-h3">{block.title}</p>}
+
+    //         {block.menu?.items && (
+    //           <Menu items={block.menu.items} className="menu-footer" />
+    //         )}
+
+    //         {block.newsletter && <Newsletter data={block.newsletter} />}
+
+    //         {block.social && (
+    //           <div className="menu-social">
+    //             {block.social.map((link, key) => {
+    //               return (
+    //                 <a
+    //                   key={key}
+    //                   href={link.url}
+    //                   target="_blank"
+    //                   rel="noopener noreferrer"
+    //                 >
+    //                   <Icon name={link.icon} />
+    //                 </a>
+    //               )
+    //             })}
+    //           </div>
+    //         )}
+
+    //         {/* Put our extras in the last block */}
+    //         {key === 3 && (
+    //           <div className="footer--extras">
+    //             <ThemeSwitch />
+
+    //             <div className="footer--disclaimer">
+    //               <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
+    //             </div>
+    //           </div>
+    //         )}
+    //       </div>
+    //     ))}
+    //   </div>

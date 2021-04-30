@@ -32,8 +32,9 @@ import productHero from './modules/product-hero'
 import collectionGrid from './modules/collection-grid'
 
 // Block types
-import freeform from './blocks/freeform'
 import accordions from './blocks/accordions'
+import contactForm from './blocks/contactForm'
+import freeform from './blocks/freeform'
 import productCard from './blocks/product-card'
 
 // Object types
@@ -62,15 +63,15 @@ import horizontalRule from './objects/horizontal-rule'
 /*  Your Schema documents / modules / objects
 /*  ------------------------------------------ */
 export default createSchema({
-  // The name of our schema
-  name: 'content',
+    // The name of our schema
+    name: 'content',
 
-  types: schemaTypes.concat([
-    /* ----------------- */
-    /* 1: Document types */
-    homePage,
-    shopPage,
-    errorPage,
+    types: schemaTypes.concat([
+        /* ----------------- */
+        /* 1: Document types */
+        homePage,
+        shopPage,
+        errorPage,
     page,
     product,
     productVariant,
@@ -103,6 +104,7 @@ export default createSchema({
     freeform,
     accordions,
     productCard,
+    contactForm,
 
     /* ----------------------- */
     /* 4: Generic Object types */

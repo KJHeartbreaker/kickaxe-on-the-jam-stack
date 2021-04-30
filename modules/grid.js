@@ -4,6 +4,7 @@ import cx from 'classnames'
 import Freeform from '@blocks/freeform'
 import Accordions from '@blocks/accordions'
 import ProductCard from '@blocks/shop/product-card'
+import ContactForm from '@components/contactForm'
 // import Carousel from '@blocks/Carousel'
 // import Photo from '@blocks/photo'
 
@@ -77,22 +78,24 @@ const GridBlock = ({ block }) => {
   const type = block._type
 
   switch (type) {
-    case 'freeform':
-      return <Freeform data={block} />
-    case 'accordions':
-      return <Accordions data={block} />
-    case 'productCard':
-      return (
-        <ProductCard
-          className="is-inline"
-          product={block.product}
-          hasVisuals
-          showThumbs
-          showPrice
-        />
-      )
-    default:
-      return null
+		case 'freeform':
+			return <Freeform data={block} />
+		case 'contactForm':
+			return <ContactForm data={block} />
+		case 'accordions':
+			return <Accordions data={block} />
+		case 'productCard':
+			return (
+				<ProductCard
+					className="is-inline"
+					product={block.product}
+					hasVisuals
+					showThumbs
+					showPrice
+				/>
+			)
+		default:
+			return null
   }
 }
 

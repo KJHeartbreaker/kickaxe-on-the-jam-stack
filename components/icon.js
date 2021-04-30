@@ -4,6 +4,12 @@ import Logo from './Logo'
 
 const getIcon = (name, color) => {
   switch (name) {
+    case 'Logo':
+        return (
+            <>
+                <Logo />
+            </>
+        )
     case 'Apple':
       return (
         <path

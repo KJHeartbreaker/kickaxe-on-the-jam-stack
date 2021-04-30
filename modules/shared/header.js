@@ -10,35 +10,36 @@ import { isBrowser } from '@lib/helpers'
 
 import PromoBar from './promo-bar'
 import Menu from '@blocks/navigation/menu'
-import MegaNavigation from '@blocks/navigation/mega-nav'
+// import MegaNavigation from '@blocks/navigation/mega-nav'
 import Logo from '@components/Logo'
 
 // Context helpers
 import {
   useSiteContext,
   useToggleMegaNav,
-  useToggleCart,
-  useCartCount,
+//   useToggleCart,
+//   useCartCount,
 } from '@lib/context'
+// import Icon from '@components/icon'
 
 
-const CartToggle = () => {
-	const toggleCart = useToggleCart()
-	const cartCount = useCartCount()
+// const CartToggle = () => {
+// 	const toggleCart = useToggleCart()
+// 	const cartCount = useCartCount()
 
-	return (
-		<button className="cart-toggle" onClick={() => toggleCart()}>
-			Cart
-			<span
-				className={cx('cart-toggle--count', {
-					'is-active': cartCount > 0,
-				})}
-			>
-				{cartCount}
-			</span>
-		</button>
-	)
-}
+// 	return (
+// 		<button className="cart-toggle" onClick={() => toggleCart()}>
+// 			Cart
+// 			<span
+// 				className={cx('cart-toggle--count', {
+// 					'is-active': cartCount > 0,
+// 				})}
+// 			>
+// 				{cartCount}
+// 			</span>
+// 		</button>
+// 	)
+// }
 
 const HeaderBackdrop = ({ isActive, onClick }) => {
 	return (
@@ -83,9 +84,9 @@ export default function Header ({ data = {}, isTransparent }) {
 
   return (
     <>
-      <a href="#content" className="skip-link">
+      {/* <a href="#content" className="skip-link">
         Skip to Content
-      </a>
+      </a> */}
 
       <PromoBar data={promo} />
 
@@ -102,7 +103,6 @@ export default function Header ({ data = {}, isTransparent }) {
               <div className="logo">
                 <Link href="/" scroll={false}>
                   <a className="logo--link" aria-label="Go Home">
-                    {/* <Icon name="Logo" id="header" viewBox="0 0 215 150" /> */}
                     <Logo />
                   </a>
                 </Link>
@@ -177,7 +177,7 @@ export default function Header ({ data = {}, isTransparent }) {
                     </div>
                   </FocusTrap>
 
-                  <CartToggle />
+                  {/* <CartToggle /> */}
                 </div>
 
                 {/* Desktop Header Menu */}
@@ -192,7 +192,7 @@ export default function Header ({ data = {}, isTransparent }) {
                     )}
                   </div>
 
-                  <div className="menu-right">
+                  {/* <div className="menu-right">
                     {menuDesktopRight?.items && (
                       <Menu
                         items={menuDesktopRight.items}
@@ -202,19 +202,19 @@ export default function Header ({ data = {}, isTransparent }) {
                     )}
 
                     <CartToggle />
-                  </div>
+                  </div> */}
                 </div>
               </nav>
             </div>
 
-            <div
+            {/* <div
               className={cx('header--border', {
                 'is-hidden': meganav.isOpen,
               })}
-            />
+            /> */}
           </div>
 
-          <MegaNavigation
+          {/* <MegaNavigation
             items={[
               ...(menuDesktopLeft?.items || []),
               ...(menuDesktopRight?.items || []),
@@ -222,7 +222,7 @@ export default function Header ({ data = {}, isTransparent }) {
             headerHeight={
               isTransparent && observerIsVisible ? headerRect?.height : false
             }
-          />
+          /> */}
         </div>
       </header>
 

@@ -2,11 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LogoWrapper = styled.div`
+    width: 200px;
+
 	svg {
 		display: block;
 		margin: 0 auto;
-		height: 100%;
-		width: auto;
+		/* height: 100%; */
+		width: 200px;
 	}
 `
 

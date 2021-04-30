@@ -1,10 +1,10 @@
-a[href='#content'].skip-link {
+/* a[href='#content'].skip-link {
 	@apply block fixed top-0 left-1/2 transform -translate-x-1/2 -translate-y-full z-90 px-2 py-1 bg-pageBG text-pageText text-xs font-semibold uppercase;
 
 	&:focus {
 		@apply translate-y-0 outline-none;
 	}
-}
+} */
 
 .header {
 	@apply sticky top-0 inset-x-0 z-50;
@@ -25,7 +25,7 @@ a[href='#content'].skip-link {
 		}
 
 		.has-bg & {
-			@apply bg-pageBG;
+			@apply bg-pageBG border-b-2;
 		}
 
 		.is-white & {
@@ -34,7 +34,7 @@ a[href='#content'].skip-link {
 	}
 
 	&--content {
-		@apply flex flex-col items-center relative z-30;
+		@apply flex flex-row items-center relative z-30 max-w-screen-xl my-0 mx-auto;
 	}
 
 	&--border {
@@ -68,7 +68,7 @@ a[href='#content'].skip-link {
 		@apply block p-2;
 
 		svg {
-			@apply block w-auto h-12;
+			@apply block w-auto h-20;
 
 			.cls-1 {
 				fill: currentColor;
@@ -83,11 +83,12 @@ a[href='#content'].skip-link {
 			.cls-8,
 			.cls-9,
 			.cls-10 {
-				stroke: #fff;
-				stroke-miterlimit: 10;
+				/* stroke: #fff; */
+				/* stroke-miterlimit: 10; */
+				fill: #ed8917;
 			}
 
-			.cls-2 {
+			/* .cls-2 {
 				fill: url(#radial-gradient);
 			}
 
@@ -121,7 +122,7 @@ a[href='#content'].skip-link {
 
 			.cls-10 {
 				fill: url(#radial-gradient-9);
-			}
+			} */
 		}
 	}
 }
@@ -216,7 +217,7 @@ a[href='#content'].skip-link {
 
 .main-navigation {
 	&--desktop {
-		@apply hidden sm:flex justify-between items-center absolute inset-0;
+		@apply hidden sm:flex justify-between items-center absolute right-0 inset-y-0;
 
 		.menu-left,
 		.menu-right {
@@ -228,6 +229,18 @@ a[href='#content'].skip-link {
 
 			li {
 				@apply mx-2;
+
+				&:hover {
+					color: var(--orange);
+				}
+
+				&.is-active {
+					color: var(--orange);
+					background-image: linear-gradient(var(--pageText), var(--pageText));
+					background-position: 0% 100%;
+					background-repeat: no-repeat;
+					background-size: 100% 1px;
+				}
 			}
 
 			button {

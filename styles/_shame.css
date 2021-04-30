@@ -1,1 +1,24 @@
-/* put your shameful styles here */
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Raleway', sans-serif;
+}
+
+h2,
+h3 {
+	a {
+		color: var(--white);
+	}
+}
+
+div.rc {
+	h2,
+	h3,
+	a {
+		color: var(--orange);
+	}
+}

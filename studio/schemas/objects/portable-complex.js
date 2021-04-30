@@ -162,6 +162,9 @@ export default {
       type: 'figure'
     },
     {
+        type: 'contactForm',
+    },
+    {
       type: 'horizontalRule'
     }
   ]
