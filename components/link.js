@@ -2,6 +2,7 @@ import React from 'react'
 import NextLink from 'next/link'
 import cx from 'classnames'
 
+// import { getStaticRoute } from '@lib/routes'
 import { getStaticRoute, getDynamicRoute } from '@lib/routes'
 
 import { useProductCount } from '@lib/context'
@@ -11,11 +12,11 @@ const Link = ({ link, children, ...rest }) => {
   const isStatic = getStaticRoute(link.page?.type)
 
   // if a collection, get product count
-  const isCollection = ['shopPage', 'collection'].includes(link.page?.type)
-  const productCounts = useProductCount()
-  const collectionCount = productCounts(
-    (isCollection && link.page?.slug) || 'all'
-  )
+//   const isCollection = ['shopPage', 'collection'].includes(link.page?.type)
+//   const productCounts = useProductCount()
+//   const collectionCount = productCounts(
+//     (isCollection && link.page?.slug) || 'all'
+//   )
 
   // External Link
   if (isLink) {
@@ -63,11 +64,11 @@ const Link = ({ link, children, ...rest }) => {
         >
           {link.title || children}
 
-          {isCollection && (
+          {/* {isCollection && (
             <span aria-hidden="true" className="collection-count">
               {collectionCount}
             </span>
-          )}
+          )} */}
         </a>
       </NextLink>
     )
