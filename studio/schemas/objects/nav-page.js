@@ -18,7 +18,7 @@ export default {
         { type: 'shopPage' },
         { type: 'page' },
         { type: 'collection' },
-        { type: 'product' }
+        // { type: 'product' }
       ]
     }
   ]

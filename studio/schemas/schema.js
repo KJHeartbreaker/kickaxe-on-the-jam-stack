@@ -35,7 +35,7 @@ import collectionGrid from './modules/collection-grid'
 import accordions from './blocks/accordions'
 import contactForm from './blocks/contactForm'
 import freeform from './blocks/freeform'
-import productCard from './blocks/product-card'
+// import productCard from './blocks/product-card'
 
 // Object types
 import seo from './objects/seo'
@@ -72,61 +72,61 @@ export default createSchema({
         homePage,
         shopPage,
         errorPage,
-    page,
-    product,
-    productVariant,
-    collection,
+        page,
+        product,
+        productVariant,
+        collection,
 
-    generalSettings,
-    cookieSettings,
-    promoSettings,
-    headerSettings,
-    footerSettings,
-    cartSettings,
-    seoSettings,
-    menu,
-    redirect,
+        generalSettings,
+        cookieSettings,
+        promoSettings,
+        headerSettings,
+        footerSettings,
+        cartSettings,
+        seoSettings,
+        menu,
+        redirect,
 
-    /* --------------- */
-    /* 2: Module types */
-    grid,
-    gridColumn,
-    gridSize,
-    hero,
-    marquee,
-    dividerPhoto,
-    newsletter,
-    productHero,
-    collectionGrid,
+        /* --------------- */
+        /* 2: Module types */
+        grid,
+        gridColumn,
+        gridSize,
+        hero,
+        marquee,
+        dividerPhoto,
+        newsletter,
+        productHero,
+        collectionGrid,
 
-    /* -------------- */
-    /* 3: Block types */
-    freeform,
-    accordions,
-    productCard,
-    contactForm,
+        /* -------------- */
+        /* 3: Block types */
+        freeform,
+        accordions,
+        // productCard,
+        contactForm,
 
-    /* ----------------------- */
-    /* 4: Generic Object types */
-    seo,
+        /* ----------------------- */
+        /* 4: Generic Object types */
+        seo,
 
-    productGalleryPhotos,
-    productListingPhotos,
-    productCartPhotos,
-    productOption,
-    productOptionValue,
-    productOptionSettings,
+        productGalleryPhotos,
+        productListingPhotos,
+        productCartPhotos,
+        productOption,
+        productOptionValue,
+        productOptionSettings,
 
-    navDropdown,
-    navPage,
-    navLink,
-    socialLink,
+        navDropdown,
+        navPage,
+        navLink,
+        socialLink,
 
-    simplePortableText,
-    complexPortableText,
+        simplePortableText,
+        complexPortableText,
 
-    accordion,
-    figure,
-    horizontalRule
-  ])
+        accordion,
+        figure,
+        horizontalRule
+    ])
 })

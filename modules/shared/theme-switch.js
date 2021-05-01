@@ -12,7 +12,7 @@ const themes = [
 
 const ThemeSwitch = () => {
   const hasMounted = useHasMounted()
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme('dark')
 
   // Make sure it's client-only
   if (!hasMounted || !theme) return null

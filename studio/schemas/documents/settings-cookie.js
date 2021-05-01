@@ -30,7 +30,7 @@ export default {
         { type: 'shopPage' },
         { type: 'page' },
         { type: 'collection' },
-        { type: 'product' }
+        // { type: 'product' }
       ],
       description: 'Show a link to "Learn More" about your cookie policy.'
     }

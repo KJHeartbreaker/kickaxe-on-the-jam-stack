@@ -48,7 +48,7 @@ module.exports = {
 			],
 		},
 	},
-	darkMode: false,
+	darkMode: 'media',
 	theme: {
 		colors: {
 			transparent: 'transparent',

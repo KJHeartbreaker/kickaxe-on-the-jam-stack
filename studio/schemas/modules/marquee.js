@@ -46,12 +46,12 @@ export default {
           name: 'photo',
           type: 'figure'
         },
-        {
-          title: 'Product',
-          name: 'product',
-          type: 'reference',
-          to: [{ type: 'product' }]
-        }
+        // {
+        //   title: 'Product',
+        //   name: 'product',
+        //   type: 'reference',
+        //   to: [{ type: 'product' }]
+        // }
       ],
       validation: Rule => Rule.min(1).required()
     },

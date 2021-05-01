@@ -6,12 +6,17 @@ export default {
   type: 'object',
   icon: FiGift,
   fields: [
-    {
-      title: 'Product',
-      name: 'product',
-      type: 'reference',
-      to: [{ type: 'product' }]
-    }
+      {
+          name: 'title',
+          type: 'string',
+          title: 'title'
+      }
+    // {
+    //   title: 'Product',
+    //   name: 'product',
+    //   type: 'reference',
+    //   to: [{ type: 'product' }]
+    // }
   ],
   preview: {
     select: {

@@ -32,7 +32,7 @@ export default {
         { type: 'shopPage' },
         { type: 'page' },
         { type: 'collection' },
-        { type: 'product' }
+        // { type: 'product' }
       ],
       description: '(optional) Select a page to link the promo banner to'
     }

@@ -13,15 +13,15 @@ let sitemap: Buffer | null = null
 
 const addUrls = async (smStream: SitemapStream) => {
 	const allPages = await getAllDocSlugs('page')
-	const allCollections = await getAllDocSlugs('collection')
+	// const allCollections = await getAllDocSlugs('collection')
 
 	allPages.map((page) => {
 		smStream.write({ url: `/${page.slug}`, changefreq: 'weekly', priority: 0.8 })
 	})
 
-	allCollections.map((collection) => {
-		smStream.write({ url: `/${collection.slug}`, changefreq: 'weekly', priority: 0.7 })
-	})
+	// allCollections.map((collection) => {
+	// 	smStream.write({ url: `/${collection.slug}`, changefreq: 'weekly', priority: 0.7 })
+	// })
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {

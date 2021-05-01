@@ -57,19 +57,19 @@ export default {
               }
         })
     },
-    {
-      title: 'Products Grid',
-      name: 'products',
-      type: 'array',
-      of: [
-        {
-          title: 'Product',
-          type: 'reference',
-          to: [{ type: 'product' }]
-        }
-      ],
-      validation: Rule => Rule.unique()
-    },
+    // {
+    //   title: 'Products Grid',
+    //   name: 'products',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       title: 'Product',
+    //       type: 'reference',
+    //       to: [{ type: 'product' }]
+    //     }
+    //   ],
+    //   validation: Rule => Rule.unique()
+    // },
     {
       title: 'SEO / Share Settings',
       name: 'seo',
