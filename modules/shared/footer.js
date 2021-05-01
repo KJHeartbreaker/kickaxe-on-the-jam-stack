@@ -2,23 +2,20 @@ import React from 'react'
 
 import ThemeSwitch from './theme-switch'
 
-import Menu from '@blocks/navigation/menu'
-import Newsletter from '@modules/newsletter'
+// import Menu from '@blocks/navigation/menu'
+// import Newsletter from '@modules/newsletter'
 import Icon from '@components/icon'
 
 const Footer = ({ data = {} }) => {
   const { blocks } = data
 
-  console.log('blocks:', blocks)
-
-
   return (
 		<footer className="footer" role="contentinfo">
 			<div className="footer--grid">
-				<div className="copy">
-					<p>
-						Copyright © <span>{new Date().getFullYear()}</span> - Kickaxe Guitars
-					</p>
+				<ThemeSwitch />
+				<div className="footer--disclaimer">
+					<p>Copyright &copy; {new Date().getFullYear()} Kickaxe Guitars.</p>
+					<p>All RightsReserved.</p>
 				</div>
 				{blocks.map((block, key) => (
 					<>

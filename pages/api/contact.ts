@@ -1,19 +1,25 @@
-// import { postEmail } from '@lib/api';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as nodemailer from 'nodemailer'
-// import Mail from "nodemailer/lib/mailer";
 
 interface FormData {
   name: string;
   email: string;
   phone: string;
   message: string;
-//   token: string;
+  token: string;
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse<FormData>) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
     const formData: FormData = req.body;
+
     console.log('formData')
+
+    const human = await validateHuman(formData.token);
+    if (!human) {
+        res.status(400);
+        res.json({ errors: ["Please... you're not fooling anybody, Bot!"] });
+        return;
+    }
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -25,6 +31,17 @@ export default async (req: NextApiRequest, res: NextApiResponse<FormData>) => {
         },
         logger: true
     })
+
+    async function validateHuman(token: string): Promise<boolean> {
+        const secret = process.env.RECAPTCHA_SECRET_KEY;
+        const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
+            {
+                method: "POST",
+            }
+        );
+        const data = await response.json();
+        return data.success;
+    }
 
     try {
         const email = await transporter.sendMail({

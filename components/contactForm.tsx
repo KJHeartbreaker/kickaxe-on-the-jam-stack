@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
+import ReCAPTCHA from 'react-google-recaptcha'
 // import { Alert } from 'react-bootstrap'
 // import DatePicker from 'react-datepicker'
 
@@ -17,53 +18,73 @@ export default function ContactForm() {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<FormValues>({
-		defaultValues: {
-			name: 'Steve',
-			email: 'steve@mcqueen.com',
-			phone: '7776665432',
-			message: `SG Flying V Les Paul`,
-		},
-	})
+	} = useForm<FormValues>()
 
 	const [submitting, setSubmitting] = useState<boolean>(false)
+	const [serverErrors, setServerErrors] = useState<Array<string>>([])
+	const reRef = useRef<ReCAPTCHA>()
 
 	const onSubmit = async (formData) => {
-		// setSubmitting(true)
+		setSubmitting(true)
+		setServerErrors([])
 
-		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-				},
-				body: JSON.stringify({
-					name: formData.name,
-					email: formData.email,
-					phone: formData.phone,
-					message: formData.message,
-					// token,
-				}),
-			})
+		const token = await reRef.current.executeAsync()
+		reRef.current.reset()
 
-			if (response.status === 200) {
-				console.log('Success')
-			}
-			// const data = await response.json()
-		} catch (error) {
-			console.log(error)
+		// try {
+		const response = await fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+			body: JSON.stringify({
+				name: formData.name,
+				email: formData.email,
+				phone: formData.phone,
+				message: formData.message,
+				token,
+			}),
+		})
+
+		// if (response.status === 200) {
+		// 	console.log('Success')
+		// }
+		const data = await response.json()
+
+		if (data.errors) {
+			setServerErrors(data.errors)
+		} else {
+			console.log('success, redirect to home page')
 		}
+		// } catch (error) {
+		// 	console.log(error)
+		// }
 
 		// console.log('data: ', data)
 
-		// setSubmitting(false)
+		setSubmitting(false)
+	}
+
+	{
+		serverErrors && (
+			<ul>
+				{serverErrors.map((error) => (
+					<li key={error}>{error}</li>
+				))}
+			</ul>
+		)
 	}
 
 	return (
 		<>
 			<h2>Send us a message</h2>
 			<form onSubmit={handleSubmit(onSubmit)}>
+				<ReCAPTCHA
+					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+					size="invisible"
+					ref={reRef}
+				/>
 				<label htmlFor="name">Name:</label>
 				<input id="name" {...register('name', { required: 'Name is required.' })} />
 				{errors.name && <p>{errors.name.message}</p>}

@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import Freeform from '@blocks/freeform'
 import Accordions from '@blocks/accordions'
-import ProductCard from '@blocks/shop/product-card'
+// import ProductCard from '@blocks/shop/product-card'
 import ContactForm from '@components/contactForm'
 // import Carousel from '@blocks/Carousel'
 // import Photo from '@blocks/photo'

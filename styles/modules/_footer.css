@@ -6,7 +6,7 @@
   } */
 
 	&--grid {
-		@apply flex flex-col-reverse md:flex-row justify-around;
+		@apply flex flex-col-reverse md:flex-row justify-around items-center;
 	}
 
 	&--block {
@@ -52,7 +52,7 @@
 
 	&--disclaimer {
 		p {
-			@apply text-sm;
+			@apply text-sm m-0 text-center;
 		}
 	}
 }

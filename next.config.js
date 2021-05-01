@@ -35,22 +35,22 @@ module.exports = withBundleAnalyzer({
     SANITY_API_TOKEN: process.env.SANITY_API_TOKEN,
 
     // Needed for Shopify product syncs
-    SHOPIFY_STORE_ID: process.env.SHOPIFY_STORE_ID,
-    SHOPIFY_API_TOKEN: process.env.SHOPIFY_API_TOKEN,
+    // SHOPIFY_STORE_ID: process.env.SHOPIFY_STORE_ID,
+    // SHOPIFY_API_TOKEN: process.env.SHOPIFY_API_TOKEN,
 
     // Needed for Klaviyo forms
-    KLAVIYO_API_KEY: process.env.KLAVIYO_API_KEY,
+    // KLAVIYO_API_KEY: process.env.KLAVIYO_API_KEY,
 
     // Needed for Yotpo reviews
-    YOTPO_API_KEY: process.env.YOTPO_API_KEY,
-    YOTPO_SECRET_KEY: process.env.YOTPO_SECRET_KEY,
+    // YOTPO_API_KEY: process.env.YOTPO_API_KEY,
+    // YOTPO_SECRET_KEY: process.env.YOTPO_SECRET_KEY,
 
     // Needed for Mailchimp forms
-    MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY,
-    MAILCHIMP_SERVER: process.env.MAILCHIMP_SERVER,
+    // MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY,
+    // MAILCHIMP_SERVER: process.env.MAILCHIMP_SERVER,
 
     // Needed for SendGrid forms
-    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    // SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
   },
   async redirects() {
     const sanityRedirects = await fetchSanityRedirects()

@@ -57,9 +57,9 @@ export default function Header ({ data = {}, isTransparent }) {
   const {
     promo,
     menuDesktopLeft,
-    menuDesktopRight,
+    // menuDesktopRight,
     menuMobilePrimary,
-    menuMobileSecondary,
+    // menuMobileSecondary,
   } = data
 
   // setup states
@@ -157,14 +157,14 @@ export default function Header ({ data = {}, isTransparent }) {
                             )}
                           </div>
 
-                          <div className="menu-mobile--secondary">
+                          {/* <div className="menu-mobile--secondary">
                             {menuMobileSecondary.items && (
                               <Menu
                                 items={menuMobileSecondary.items}
                                 onClick={() => toggleMobileNav(false)}
                               />
                             )}
-                          </div>
+                          </div> */}
                         </div>
                       </m.div>
 

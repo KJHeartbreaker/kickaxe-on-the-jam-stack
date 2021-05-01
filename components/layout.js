@@ -61,8 +61,8 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="format-detection" content="telephone=no" />
 
-				<link preload="true" rel="icon" href="/favicon.svg" />
-				<link preload="true" rel="mask-icon" href="/favicon.svg" color="#000000" />
+				<link preload="true" rel="icon" href="/KA-favicon.ico" />
+				<link preload="true" rel="mask-icon" href="/KA-favicon.ico" color="#000000" />
 				{siteIcon && (
 					<link
 						rel="apple-touch-icon"
@@ -70,10 +70,10 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
 					/>
 				)}
 
-				<link
+				{/* <link
 					rel="preconnect"
 					href="https://kickaxe-guitars-yyc.myshopify.com"
-				/>
+				/> */}
 				<link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
 
 				<title>{metaTitle}</title>
