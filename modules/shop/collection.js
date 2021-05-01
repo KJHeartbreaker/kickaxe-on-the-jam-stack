@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import { useIntersection } from 'use-intersection'
 
-import ProductCard from '@blocks/shop/product-card'
+// import ProductCard from '@blocks/shop/product-card'
 
 const Collection = ({
   products,
@@ -44,7 +44,7 @@ const Collection = ({
   return (
     <section className="collection">
       <div className="collection--grid">
-        {productsList.map((product, key) => (
+        {/* {productsList.map((product, key) => (
           <ProductCard
             key={key}
             index={key}
@@ -57,7 +57,7 @@ const Collection = ({
             showOption={product.surfaceOption}
             showPrice
           />
-        ))}
+        ))} */}
       </div>
 
       {hasPagination && hasMore && (

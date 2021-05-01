@@ -3,7 +3,7 @@ import { useIntersection } from 'use-intersection'
 import { Marqy } from 'marqy'
 
 import Photo from '@components/photo'
-import ProductCard from '@blocks/shop/product-card'
+// import ProductCard from '@blocks/shop/product-card'
 
 const Marquee = ({ data = {} }) => {
   const { items, speed, reverse, pausable } = data
@@ -47,7 +47,7 @@ const Marquee = ({ data = {} }) => {
                     />
                   </div>
                 )
-              case 'product':
+              {/* case 'product':
                 return (
                   <div className="marquee--product">
                     <ProductCard
@@ -58,7 +58,7 @@ const Marquee = ({ data = {} }) => {
                       showPrice
                     />
                   </div>
-                )
+                ) */}
             }
           })}
         </div>

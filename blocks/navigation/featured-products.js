@@ -1,13 +1,13 @@
 import React from 'react'
 
-import ProductCard from '@blocks/shop/product-card'
+// import ProductCard from '@blocks/shop/product-card'
 
 const FeaturedProducts = ({ products, onClick }) => {
   if (!products) return null
 
   return (
     <>
-      {products.map((product, key) => (
+      {/* {products.map((product, key) => (
         <ProductCard
           key={key}
           index={key}
@@ -17,7 +17,7 @@ const FeaturedProducts = ({ products, onClick }) => {
           className="is-featured"
           onClick={onClick}
         />
-      ))}
+      ))} */}
     </>
   )
 }

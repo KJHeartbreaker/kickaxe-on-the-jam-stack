@@ -84,16 +84,16 @@ const GridBlock = ({ block }) => {
 			return <ContactForm data={block} />
 		case 'accordions':
 			return <Accordions data={block} />
-		case 'productCard':
-			return (
-				<ProductCard
-					className="is-inline"
-					product={block.product}
-					hasVisuals
-					showThumbs
-					showPrice
-				/>
-			)
+		// case 'productCard':
+		// 	return (
+		// 		<ProductCard
+		// 			className="is-inline"
+		// 			product={block.product}
+		// 			hasVisuals
+		// 			showThumbs
+		// 			showPrice
+		// 		/>
+		// 	)
 		default:
 			return null
   }
