@@ -55,7 +55,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         <p><strong>Message: </strong>${formData.message}</p><br>`
         })
 
-        console.log('Message Sent', email.messageId)
+        // console.log('Message Sent', email.messageId)
     } catch (error) {
         console.log('error:', error)
     }
