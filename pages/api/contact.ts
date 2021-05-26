@@ -46,7 +46,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         const email = await transporter.sendMail({
             from: formData.email,
-            to: 'kickaxeguitars@shawbiz.ca',
+            to: 'kickaxeguitars.yyc@gmail.com',
             subject: `Contact Form Submission from ${formData.name}`,
             html: `<p>You have a new contact form submission</p><br>
         <p><strong>Name: </strong>${formData.name}</p><br>
