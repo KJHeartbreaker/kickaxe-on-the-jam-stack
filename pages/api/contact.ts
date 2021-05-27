@@ -12,8 +12,6 @@ interface FormData {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const formData: FormData = req.body;
 
-    console.log('formData')
-
     const human = await validateHuman(formData.token);
     if (!human) {
         res.status(400);
