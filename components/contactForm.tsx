@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import ReCAPTCHA from 'react-google-recaptcha'
-// import { Alert } from 'react-bootstrap'
-// import DatePicker from 'react-datepicker'
-
-// let renderCount = 0
 
 type FormValues = {
 	name: string
@@ -47,9 +43,6 @@ export default function ContactForm() {
 			}),
 		})
 
-		// if (response.status === 200) {
-		// 	console.log('Success')
-		// }
 		const data = await response.json()
 
 		if (data.errors) {
@@ -60,8 +53,6 @@ export default function ContactForm() {
 		// } catch (error) {
 		// 	console.log(error)
 		// }
-
-		// console.log('data: ', data)
 
 		setSubmitting(false)
 	}
