@@ -5,18 +5,10 @@ import cx from 'classnames'
 // import { getStaticRoute } from '@lib/routes'
 import { getStaticRoute, getDynamicRoute } from '@lib/routes'
 
-import { useProductCount } from '@lib/context'
 
 const Link = ({ link, children, ...rest }) => {
   const isLink = !!link.url
   const isStatic = getStaticRoute(link.page?.type)
-
-  // if a collection, get product count
-//   const isCollection = ['shopPage', 'collection'].includes(link.page?.type)
-//   const productCounts = useProductCount()
-//   const collectionCount = productCounts(
-//     (isCollection && link.page?.slug) || 'all'
-//   )
 
   // External Link
   if (isLink) {
@@ -43,35 +35,26 @@ const Link = ({ link, children, ...rest }) => {
     const isDynamic = getDynamicRoute(link.page?.type)
 
     return (
-      <NextLink
+      (<NextLink
         href={
           isStatic !== false
             ? `/${isStatic}`
             : `/${isDynamic ? `${isDynamic}/` : ''}${link.page?.slug}`
         }
         scroll={false}
-      >
-        <a
-          className={
-            link.isButton
-              ? cx('btn', link.styles?.style, {
-                  'is-large': link.styles?.isLarge,
-                  'is-block': link.styles?.isBlock,
-                })
-              : null
-          }
-          {...rest}
-        >
-          {link.title || children}
+        className={
+          link.isButton
+            ? cx('btn', link.styles?.style, {
+                'is-large': link.styles?.isLarge,
+                'is-block': link.styles?.isBlock,
+              })
+            : null
+        }
+        {...rest}>
 
-          {/* {isCollection && (
-            <span aria-hidden="true" className="collection-count">
-              {collectionCount}
-            </span>
-          )} */}
-        </a>
-      </NextLink>
-    )
+        {link.title || children}
+      </NextLink>)
+    );
   }
 }
 

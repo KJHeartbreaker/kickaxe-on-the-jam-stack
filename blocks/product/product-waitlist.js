@@ -169,7 +169,7 @@ const Waitlist = ({ variant, klaviyo }) => {
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
 export default Waitlist

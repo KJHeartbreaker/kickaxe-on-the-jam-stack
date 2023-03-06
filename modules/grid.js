@@ -1,12 +1,10 @@
 import React from 'react'
 import cx from 'classnames'
+import classNames from 'classnames/bind'
 
 import Freeform from '@blocks/freeform'
 import Accordions from '@blocks/accordions'
-// import ProductCard from '@blocks/shop/product-card'
 import ContactForm from '@components/contactForm'
-// import Carousel from '@blocks/Carousel'
-// import Photo from '@blocks/photo'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -34,7 +32,8 @@ const Grid = ({ data = {} }) => {
       colSpan,
       start && colStart,
       justify && colJustify,
-      align && colAlign
+      align && colAlign,
+      colSpan === 'col-span-3' ? 'w-full' : ''
     )
   }
 
@@ -84,16 +83,6 @@ const GridBlock = ({ block }) => {
 			return <ContactForm data={block} />
 		case 'accordions':
 			return <Accordions data={block} />
-		// case 'productCard':
-		// 	return (
-		// 		<ProductCard
-		// 			className="is-inline"
-		// 			product={block.product}
-		// 			hasVisuals
-		// 			showThumbs
-		// 			showPrice
-		// 		/>
-		// 	)
 		default:
 			return null
   }

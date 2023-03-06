@@ -7,48 +7,48 @@ const Logo = ({ projectName }) => {
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 708.36 273.94">
   <defs>
     <radialGradient id="radial-gradient" cx="333.7" cy="372.03" fx="312.70105405749797" fy="378.3404410682525" r="26.14" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#351416" />
-      <stop offset="0.55" stop-color="#903c38" />
-      <stop offset="0.88" stop-color="#8e3b38" />
+      <stop offset="0" stopColor="#351416" />
+      <stop offset="0.55" stopColor="#903c38" />
+      <stop offset="0.88" stopColor="#8e3b38" />
     </radialGradient>
     <radialGradient id="radial-gradient-2" cx="303.99" cy="397.04" r="70.9" gradientUnits="userSpaceOnUse">
-      <stop offset="0.21" stop-color="#d87944" />
-      <stop offset="0.45" stop-color="#903c38" />
-      <stop offset="0.73" stop-color="#8e3b38" />
-      <stop offset="0.91" stop-color="#351416" />
+      <stop offset="0.21" stopColor="#d87944" />
+      <stop offset="0.45" stopColor="#903c38" />
+      <stop offset="0.73" stopColor="#8e3b38" />
+      <stop offset="0.91" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-3" cx="170.91" cy="388.28" fx="217.47199781747975" fy="362.0818347827195" r="89.18" gradientUnits="userSpaceOnUse">
-      <stop offset="0.21" stop-color="#d87944" />
-      <stop offset="0.4" stop-color="#903c38" />
-      <stop offset="0.59" stop-color="#8e3b38" />
-      <stop offset="0.73" stop-color="#351416" />
+      <stop offset="0.21" stopColor="#d87944" />
+      <stop offset="0.4" stopColor="#903c38" />
+      <stop offset="0.59" stopColor="#8e3b38" />
+      <stop offset="0.73" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-4" cx="82.71" cy="325.63" r="62.78" gradientUnits="userSpaceOnUse">
-      <stop offset="0.21" stop-color="#d87944" />
-      <stop offset="0.44" stop-color="#903c38" />
-      <stop offset="0.59" stop-color="#8e3b38" />
-      <stop offset="0.73" stop-color="#351416" />
+      <stop offset="0.21" stopColor="#d87944" />
+      <stop offset="0.44" stopColor="#903c38" />
+      <stop offset="0.59" stopColor="#8e3b38" />
+      <stop offset="0.73" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-5" cx="471.11" cy="191.53" r="44.62" gradientUnits="userSpaceOnUse">
-      <stop offset="0.01" stop-color="#d87944" />
-      <stop offset="0.37" stop-color="#903c38" />
-      <stop offset="1" stop-color="#351416" />
+      <stop offset="0.01" stopColor="#d87944" />
+      <stop offset="0.37" stopColor="#903c38" />
+      <stop offset="1" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-6" cx="273.61" cy="221.26" r="137.14" gradientUnits="userSpaceOnUse">
-      <stop offset="0.01" stop-color="#d87944" />
-      <stop offset="0.21" stop-color="#903c38" />
-      <stop offset="0.56" stop-color="#351416" />
-      <stop offset="0.99" stop-color="#d87944" />
+      <stop offset="0.01" stopColor="#d87944" />
+      <stop offset="0.21" stopColor="#903c38" />
+      <stop offset="0.56" stopColor="#351416" />
+      <stop offset="0.99" stopColor="#d87944" />
     </radialGradient>
     <radialGradient id="radial-gradient-7" cx="325.68" cy="223.36" r="188.37" gradientUnits="userSpaceOnUse">
-      <stop offset="0.01" stop-color="#d87944" />
-      <stop offset="0.27" stop-color="#903c38" />
-      <stop offset="0.56" stop-color="#351416" />
+      <stop offset="0.01" stopColor="#d87944" />
+      <stop offset="0.27" stopColor="#903c38" />
+      <stop offset="0.56" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-8" cx="138.2" cy="168.41" r="74.84" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#d87944" />
-      <stop offset="0.45" stop-color="#903c38" />
-      <stop offset="1" stop-color="#351416" />
+      <stop offset="0" stopColor="#d87944" />
+      <stop offset="0.45" stopColor="#903c38" />
+      <stop offset="1" stopColor="#351416" />
     </radialGradient>
     <radialGradient id="radial-gradient-9" cx="56.95" cy="274.1" fx="150.72814899978113" fy="287.57056731627637" r="94.74" />
   </defs>

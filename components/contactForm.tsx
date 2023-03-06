@@ -67,54 +67,52 @@ export default function ContactForm() {
 		)
 	}
 
-	return (
-		<>
-			<h2>Send us a message</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<ReCAPTCHA
-					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-					size="invisible"
-					ref={reRef}
-				/>
-				<label htmlFor="name">Name:</label>
-				<input id="name" {...register('name', { required: 'Name is required.' })} />
-				{errors.name && <p>{errors.name.message}</p>}
+	return <>
+        <h2>Send us a message</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                size="invisible"
+                ref={reRef}
+            />
+            <label htmlFor="name">Name:</label>
+            <input id="name" {...register('name', { required: 'Name is required.' })} />
+            {errors.name && <p>{errors.name.message}</p>}
 
-				<label htmlFor="email">Email:</label>
-				<input
-					id="email"
-					{...register('email', { required: 'Email is required', pattern: /^\S+@\S+$/i })}
-				/>
-				{errors.email && <p>{errors.email.message}</p>}
+            <label htmlFor="email">Email:</label>
+            <input
+                id="email"
+                {...register('email', { required: 'Email is required', pattern: /^\S+@\S+$/i })}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
 
-				<label htmlFor="phone">Phone:</label>
-				<input
-					id="phone"
-					{...register('phone', {
-						required: 'Phone number is required',
-						minLength: 6,
-						maxLength: 12,
-					})}
-				/>
-				{errors.phone && <p>{errors.phone.message}</p>}
+            <label htmlFor="phone">Phone:</label>
+            <input
+                id="phone"
+                {...register('phone', {
+                    required: 'Phone number is required',
+                    minLength: 6,
+                    maxLength: 12,
+                })}
+            />
+            {errors.phone && <p>{errors.phone.message}</p>}
 
-				<label htmlFor="message">Message:</label>
-				<textarea
-					id="message"
-					// ref={register}
-					{...register('message', {
-						required: 'Message is required.',
-						maxLength: 1000,
-					})}
-				/>
-				{errors.message && errors.message.type === 'required' && <p>Message is required</p>}
-				{errors.message && errors.message.type === 'maxLength' && (
-					<p>Max length exceeded</p>
-				)}
-				<input type="submit" disabled={submitting} />
-			</form>
-		</>
-	)
+            <label htmlFor="message">Message:</label>
+            <textarea
+                id="message"
+                // ref={register}
+                {...register('message', {
+                    required: 'Message is required.',
+                    maxLength: 1000,
+                })}
+            />
+            {errors.message && errors.message.type === 'required' && <p>Message is required</p>}
+            {errors.message && errors.message.type === 'maxLength' && (
+                <p>Max length exceeded</p>
+            )}
+            <input type="submit" disabled={submitting} />
+        </form>
+    </>;
 	// // const { register, handleSubmit, errors } = useForm()
 
 	// // const onSubmit = (data) => {
