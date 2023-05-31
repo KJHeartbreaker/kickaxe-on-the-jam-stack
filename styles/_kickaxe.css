@@ -22,3 +22,8 @@ div.rc {
 		color: var(--orange);
 	}
 }
+
+.hero--content figure {
+	max-width: 500px;
+	margin: 0 auto;
+}
